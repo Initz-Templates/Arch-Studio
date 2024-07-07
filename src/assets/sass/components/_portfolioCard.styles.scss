@@ -1,0 +1,124 @@
+.portfolio-container {
+	@include flex-row-space-between;
+	flex-wrap: wrap;
+	margin-bottom: 13.2rem;
+	padding: 3.2rem 3.2rem 0 3.2rem;
+
+	.portfolio-page-card {
+		margin-bottom: 5rem;
+	}
+}
+
+.portfolio-card {
+	width: 35rem;
+	height: 56rem;
+	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	margin-bottom: 5rem;
+
+	@media screen and (max-width: 850px) {
+		width: 100%;
+		height: 24rem;
+	}
+
+	@media screen and (max-width: 600px) {
+		height: 31.1rem;
+	}
+
+	.image-portfolio {
+		filter: brightness(0.7);
+		transition: all 0.3s;
+
+		@media screen and (max-width: 850px) {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&:hover .image-portfolio {
+		filter: brightness(0.9);
+		transform: scale(1.1);
+	}
+
+	.portfolio-card-id {
+		position: absolute;
+		top: 4rem;
+		right: -1.06rem;
+		opacity: 0.5;
+		transition: all 0.3s;
+
+		@media screen and (max-width: 850px) {
+			font-size: 25rem;
+			right: 1.6rem;
+		}
+
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+	}
+
+	&:hover .portfolio-card-id {
+		top: 20%;
+		opacity: 0.9;
+	}
+
+	.portfolio-card-title-container {
+		position: absolute;
+		bottom: 4rem;
+		left: 4rem;
+		color: $white;
+		transition: all 0.3s;
+	}
+
+	&:hover .portfolio-card-title-container {
+		bottom: 25%;
+
+		@media screen and (max-width: 450px) {
+			bottom: 30%;
+		}
+
+		h5 {
+			text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2) !important;
+		}
+	}
+
+	.portfolio-link {
+		.arrow-icon {
+			display: none;
+		}
+	}
+
+	&:hover .portfolio-link {
+		margin-top: 1rem;
+		padding: 1.2rem 2rem;
+		background-color: $very-dark-blue;
+		color: $white;
+		transition: all 0.3s;
+		cursor: pointer;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background-color: $dark-grey;
+		}
+
+		&:active {
+			background-color: $light-grey;
+		}
+
+		.arrow-icon {
+			display: block;
+			filter: invert(1);
+			width: 13%;
+			margin-left: 1rem;
+			transition: all 0.3s;
+		}
+
+		&:hover .arrow-icon {
+			transform: translateX(0.5rem);
+		}
+	}
+}
